@@ -9,13 +9,13 @@
 int main() {
     char s[1000];
     fgets(s, sizeof(s), stdin);
-
     // hapus newline agar bisa dibaca
     s[strcspn(s, "\n")] = '\0';
 
     int panjang = strlen(s);
     if (panjang == 0) {
         printf("0\n");
+        return 0;
     }
 
     int butuhdipasangkan = 0, belumdipasangkan = 0;
