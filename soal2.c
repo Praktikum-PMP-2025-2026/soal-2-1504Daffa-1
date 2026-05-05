@@ -24,7 +24,7 @@ int main() {
         }
     }
     if (butuhdipasangkan == 0 && belumdipasangkan == 0) {
-        printf("0\n");
+        printf("0");
     } else {
         printf("%d\n", butuhdipasangkan + belumdipasangkan);
     }
