@@ -4,14 +4,20 @@
 // Soal yang dipilih: Soal Nomor 2
 
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     char s[1000]; //maksimal panjang string 1000 karakter
     if (scanf("%s", s) != 1) {
         return 1;
     }
+    int panjang = strlen(s);
+    if (panjang == 0) {
+        printf("0");
+        return 0;
+    }
     int butuhdipasangkan = 0, belumdipasangkan = 0;
-// menghitung jumlah tanda kurung yang belum dipasangkan dan yang sudah dipasnagkan
+// menghitung jumlah tanda kurung yang belum dipasangkan dan yang sudah dipasangkan
     for (int i = 0; s[i] != '\0'; i++) {
         if (s[i] == '(') {
             belumdipasangkan++;
