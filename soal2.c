@@ -6,11 +6,12 @@
 #include <stdio.h>
 
 int main() {
-    char s[1000]; //stringnya maksimal 1000 karakter
-    scanf("%s", s);
-    //disini saya pake dua variabel buat ngitung berapa banyak tanda kurung yang belum dipasangkan dan berapa banyak yang butuh dipasangkan
+    char s[1000]; //maksimal panjang string 1000 karakter
+    if (scanf("%s", s) != 1) {
+        return 1;
+    }
     int butuhdipasangkan = 0, belumdipasangkan = 0;
-
+// menghitung jumlah tanda kurung yang belum dipasangkan dan yang sudah dipasnagkan
     for (int i = 0; s[i] != '\0'; i++) {
         if (s[i] == '(') {
             belumdipasangkan++;
