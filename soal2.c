@@ -8,22 +8,20 @@
 
 int main() {
     char s[1000];
-    fgets(s, sizeof(s), stdin);
-    // hapus newline agar bisa dibaca
-    s[strcspn(s, "\n")] = '\0';
-
-    int panjang = strlen(s);
-    if (panjang == 0) {
+// membaca input string
+    if (fgets(s, sizeof(s), stdin) == NULL) {
         printf("0\n");
         return 0;
     }
+
+    s[strcspn(s, "\n")] = '\0';
 
     int butuhdipasangkan = 0, belumdipasangkan = 0;
 // menghitung jumlah kurung yang belum dan sudah dipasankan
     for (int i = 0; s[i] != '\0'; i++) {
         if (s[i] == '(') {
             belumdipasangkan++;
-        } else {
+        } else if (s[i] == ')') {
             if (belumdipasangkan > 0) {
                 belumdipasangkan--;
             } else {
@@ -34,4 +32,3 @@ int main() {
     printf("%d\n", butuhdipasangkan + belumdipasangkan);
     return 0;
 }
-
