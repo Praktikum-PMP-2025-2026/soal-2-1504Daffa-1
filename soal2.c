@@ -22,8 +22,11 @@ int main() {
             }
         }
     }
-    //hasilnya dijumlahkn
-    printf("%d\n", butuhdipasangkan + belumdipasangkan);
+    if (butuhdipasangkan == 0 && belumdipasangkan == 0) {
+        printf("0\n");
+    } else {
+        printf("%d\n", butuhdipasangkan + belumdipasangkan);
+    }
 
     return 0;
 }
