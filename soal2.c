@@ -2,19 +2,25 @@
 // NIM : 13224068
 // Source Code untuk praktikum modul 4- Dynamics Structure 
 // Soal yang dipilih: Soal Nomor 2
+
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char s[1000]; //maksimal panjang string 1000 karakter
-    memset(s, 0, sizeof(s)); // inisialisasi string
-    if (scanf("%s", s) != 1) {
-        return 1;
-    }
+    char s[1000];
+    fgets(s, sizeof(s), stdin);
+
+    // hapus newline agar bisa dibaca
+    s[strcspn(s, "\n")] = '\0';
+
     int panjang = strlen(s);
-    // Hapus kondisi return 0 untuk panjang == 0 agar tetap output "0"
+    if (panjang == 0) {
+        printf("0\n");
+        return 0;
+    }
+
     int butuhdipasangkan = 0, belumdipasangkan = 0;
-// menghitung jumlah tanda kurung yang belum dipasangkan dan yang sudah dipasangkan
+// menghitung jumlah kurung yang belum dan sudah dipasankan
     for (int i = 0; s[i] != '\0'; i++) {
         if (s[i] == '(') {
             belumdipasangkan++;
@@ -26,13 +32,7 @@ int main() {
             }
         }
     }
-    if (butuhdipasangkan == 0 && belumdipasangkan == 0) {
-        printf("0");
-    } else {
-        printf("%d\n", butuhdipasangkan + belumdipasangkan);
-    }
-
+    printf("%d\n", butuhdipasangkan + belumdipasangkan);
     return 0;
 }
-
 
