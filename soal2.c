@@ -13,7 +13,6 @@ int main() {
     }
     int panjang = strlen(s);
     if (panjang == 0) {
-        printf("0");
         return 0;
     }
     int butuhdipasangkan = 0, belumdipasangkan = 0;
